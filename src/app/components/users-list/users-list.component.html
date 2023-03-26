@@ -1,0 +1,18 @@
+<table id="custom" class="table table-bordered">
+  <thead>
+    <tr class="table-success">
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Posts</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let user of users"
+      scope="row"
+      app-user-item
+      [user]="user"
+      class="table-light"
+    ></tr>
+  </tbody>
+</table>

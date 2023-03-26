@@ -1,0 +1,17 @@
+<div class="card-header">Comments:</div>
+<div class="card-body text-success">
+  <h6 class="card-title">{{ comment.creator }}</h6>
+  <p class="card-text">{{ comment.text }}</p>
+  <button
+    type="button"
+    class="btn btn-info btn-sm position-relative"
+    (click)="upComment(comment)"
+  >
+    Likes
+    <span
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+    >
+      {{ comment.likes }}
+    </span>
+  </button>
+</div>

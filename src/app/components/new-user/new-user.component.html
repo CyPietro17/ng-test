@@ -1,0 +1,34 @@
+<div class="d-flex justify-content-center">
+  <form class="row g-3" [formGroup]="userSign" (ngSubmit)="onSubmit()">
+    <div class="form-floating mb-4, col-auto">
+      <input
+        type="text"
+        formControlName="username"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Username"
+      />
+      <label for="floatingInput">Username</label>
+    </div>
+    <div class="form-floating mb-4, col-auto">
+      <input
+        type="email"
+        formControlName="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Email"
+      />
+      <label for="floatingInput">Email</label>
+    </div>
+    <div class="col-auto">
+      <button
+        style="--bs-btn-line-height: 2"
+        type="submit"
+        class="btn btn-primary btn-lg"
+        [disabled]="!userSign.valid"
+      >
+        Confirm identity
+      </button>
+    </div>
+  </form>
+</div>

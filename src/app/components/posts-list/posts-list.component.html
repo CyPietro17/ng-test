@@ -1,0 +1,43 @@
+<div class="card" *ngFor="let post of posts; let index = index">
+  <h5 class="card-header">{{ post.creator }}</h5>
+  <div class="card-body">
+    <h6 class="card-text">{{ post.text }}</h6>
+    <div class="card-footer">
+      <button
+        type="button"
+        class="btn btn-info btn-sm position-relative"
+        (click)="upLikes(post)"
+      >
+        Likes
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ post.likes }}
+        </span>
+      </button>
+      <button
+        style="margin: 20px"
+        type="button"
+        class="btn btn-success btn-sm position-relative"
+      >
+        Comments
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        >
+          {{ post.comments.length }}
+        </span>
+      </button>
+
+      <div
+        class="card border-success mb-3"
+        *ngFor="let comment of post.comments"
+        app-comment-item
+        [comment]="comment"
+      ></div>
+      <app-new-comment (shareComment)="onNewComment($event)"></app-new-comment>
+    </div>
+  </div>
+</div>
+<div>
+  <app-create-post (sharePost)="onNewPost($event)"></app-create-post>
+</div>

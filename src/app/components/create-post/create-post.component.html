@@ -1,0 +1,35 @@
+<form class="row g-3" [formGroup]="newPost" (ngSubmit)="onSubmit()">
+  <div class="form-floating">
+    <textarea
+      formControlName="text"
+      class="form-control"
+      placeholder="New Post"
+      id="floatingTextarea2"
+      style="height: 100px"
+    ></textarea>
+    <label for="floatingTextarea2">New Post</label>
+  </div>
+  <div class="form-floating">
+    <select
+      formControlName="creator"
+      class="form-select"
+      id="floatingSelect"
+      aria-label="Floating label select example"
+    >
+      <option selected>Select creator</option>
+      <option *ngFor="let user of users">{{ user.username }}</option>
+    </select>
+    <label for="floatingSelect">Creator</label>
+  </div>
+
+  <div class="col-auto" class="d-flex justify-content-center">
+    <button
+      style="--bs-btn-line-height: 2"
+      type="submit"
+      class="btn btn-primary btn-lg"
+      [disabled]="!newPost.valid"
+    >
+      Share
+    </button>
+  </div>
+</form>
