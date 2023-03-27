@@ -1,5 +1,14 @@
+interface UsersByDummy {
+  users: User[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
 interface User {
   id: number;
+  firstName: string;
+  lastName: string;
   username: string;
   email: string;
   postsId: number[];

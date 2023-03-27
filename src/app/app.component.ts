@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     private postService: PostserviceService
   ) {}
   ngOnInit(): void {
-    this.userService.InitUsers();
+    this.userService.serviceOnInit();
     this.postService.InitPost();
   }
 }

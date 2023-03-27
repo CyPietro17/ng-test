@@ -16,7 +16,7 @@ export class NewCommentComponent {
   @Input() post!: Post;
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
+    this.users = this.userService.usersBlog();
   }
 
   newComment = new FormGroup({

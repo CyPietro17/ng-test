@@ -1,4 +1,4 @@
-import { UserserviceService } from './../../services/userservice.service';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {}
+export class LoginComponent {
+  constructor(private router: Router) {}
+
+  back() {
+    this.router.navigateByUrl('user-page');
+  }
+}

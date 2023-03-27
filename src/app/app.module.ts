@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
 import { ServicesModule } from './services/services.module';
 import { LayoutModule } from './layout/layout.module';
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     LayoutModule,
     PagesModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [ServicesModule],
   bootstrap: [AppComponent],

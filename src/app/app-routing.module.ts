@@ -6,10 +6,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'home', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomepageComponent },
   { path: 'user-page', component: UserpageComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent },
 ];
 

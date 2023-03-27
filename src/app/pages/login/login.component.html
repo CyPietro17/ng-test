@@ -4,6 +4,7 @@
     class="form-control"
     id="floatingInput"
     placeholder="Email"
+    required
   />
   <label for="floatingInput">Email</label>
 </div>
@@ -13,6 +14,7 @@
     class="form-control"
     id="floatingPassword"
     placeholder="Password"
+    required
   />
   <label for="floatingPassword">Password</label>
 </div>
@@ -21,7 +23,16 @@
     style="--bs-btn-line-height: 2"
     type="submit"
     class="btn btn-primary btn-lg"
+    (click)="back()"
   >
     Login
   </button>
+</div>
+
+<div>
+  <p>
+    email: pippo@angular.js
+    <br />
+    password: pluto33
+  </p>
 </div>

@@ -1,14 +1,14 @@
+import { UserserviceService } from 'src/app/services/userservice.service';
 import { PostserviceService } from './../../services/postservice.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { UserserviceService } from 'src/app/services/userservice.service';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
   styleUrls: ['./create-post.component.css'],
 })
-export class CreatePostComponent implements OnInit {
+export class CreatePostComponent {
   @Output() sharePost = new EventEmitter<Post>();
 
   newPost = new FormGroup({
@@ -19,16 +19,17 @@ export class CreatePostComponent implements OnInit {
   users!: User[];
 
   constructor(
-    private userService: UserserviceService,
-    private postService: PostserviceService
+    private postService: PostserviceService,
+    private usersService: UserserviceService
   ) {}
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
+    this.users = this.usersService.usersBlog();
   }
 
   onSubmit() {
     this.sharePost.emit(this.prepareRequest());
+    this.newPost.reset();
   }
 
   prepareRequest(): Post {
